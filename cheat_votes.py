@@ -6,6 +6,7 @@ x = 0
 print('Type number of 2 to 7 to select a voice id')
 b = input(' ')
 print('Type city')
+#for example you can type here "msk"
 gorod = input(' ')
 for x in range(y):
 	x += 1
