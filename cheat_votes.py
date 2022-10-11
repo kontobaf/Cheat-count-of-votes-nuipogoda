@@ -18,4 +18,3 @@ else:
 	print('cycle has been finished, he is retryed', x,'times') 
 
 #this is test
->>>>>>> 5a5689af50b6e9005ba8354ab513b20f4d8770d5
