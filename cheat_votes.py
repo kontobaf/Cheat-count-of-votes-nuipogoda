@@ -12,5 +12,4 @@ for x in range(y):
 	x += 1
 	requests.get('https://'+gorod+'.nuipogoda.ru/vote.js?id='+b)
 else:
-
 	print('cycle has been finished, he is retryed', x,'times') 
