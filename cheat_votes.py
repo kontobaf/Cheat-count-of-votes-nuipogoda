@@ -1,5 +1,5 @@
 import requests
-import time
+import concurrent.futures
 print('count of tries?')
 y = int(input(' '))
 x = 0
@@ -8,8 +8,14 @@ b = input(' ')
 print('Type city')
 #for example you can type here "msk"
 gorod = input(' ')
-for x in range(y):
-	x += 1
-	requests.get('https://'+gorod+'.nuipogoda.ru/vote.js?id='+b)
-else:
-	print('cycle has been finished, he is retryed', x,'times') 
+
+def send_request(url):
+	requests.get(url)
+
+urls = [
+	'https://'+gorod+'.nuipogoda.ru/vote.js?id='+b
+] * y
+
+with concurrent.futures.ThreadPoolExecutor() as executor:
+	executor.map(send_request, urls)
+	print('program has been finished') 
